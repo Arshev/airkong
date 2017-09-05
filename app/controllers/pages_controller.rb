@@ -21,7 +21,7 @@ class PagesController < ApplicationController
     @rooms = @search.result
 
     @arrRooms = @rooms.to_a
-
+    # STEP 4
     if (params[:start_date] && params[:end_date] && !params[:start_date].empty? && !params[:end_date].empty?)
 
       start_date = Date.parse(params[:start_date])
@@ -30,12 +30,14 @@ class PagesController < ApplicationController
       @rooms.each do |room|
 
         not_available = room.reservations.where(
-        "(? <= start_date AND start_date <= ?)
+        "((? <= start_date AND start_date <= ?)
         OR (? <= end_date AND end_date <= ?)
-        OR (start_date < ? AND ? < end_date)",
+        OR (start_date < ? AND ? < end_date))
+        AND status = ?",
         start_date, end_date,
         start_date, end_date,
-        start_date, end_date
+        start_date, end_date,
+        1
         ).limit(1)
 
         if not_available.length > 0
