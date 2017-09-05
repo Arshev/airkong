@@ -105,6 +105,7 @@ GEM
     jquery-ui-rails (5.0.5)
       railties (>= 3.2.16)
     jwt (1.5.6)
+    libxml-ruby (3.0.0)
     listen (3.1.5)
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
@@ -228,6 +229,10 @@ GEM
     turbolinks (5.0.1)
       turbolinks-source (~> 5)
     turbolinks-source (5.0.3)
+    twilio-ruby (5.2.1)
+      faraday (~> 0.9)
+      jwt (~> 1.5)
+      libxml-ruby (>= 2.0, < 4.0)
     tzinfo (1.2.3)
       thread_safe (~> 0.1)
     uglifier (3.2.0)
@@ -273,6 +278,7 @@ DEPENDENCIES
   sqlite3
   toastr-rails (~> 1.0)
   turbolinks (~> 5)
+  twilio-ruby
   tzinfo-data
   uglifier (>= 1.3.0)
   web-console (>= 3.3.0)
