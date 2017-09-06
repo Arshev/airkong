@@ -66,3 +66,5 @@ gem 'jquery-ui-rails', '~> 5.0'
 gem 'ransack', '~> 1.8'
 # AirKong
 gem 'twilio-ruby'
+gem 'fullcalendar-rails', '~> 3.4'
+gem 'momentjs-rails', '2.17.1'
