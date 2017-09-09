@@ -1,4 +1,4 @@
 Twilio.configure do |config|
-  config.account_sid = 'AC1c2309bed1816eaf4e034ad4c3c0a728'
-  config.auth_token = 'd2e17824212306863107a05819edc5e6'
+  config.account_sid = Rails.application.secrets.twilio_account_sid
+  config.auth_token = Rails.application.secrets.twilio_auth_token
 end

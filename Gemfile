@@ -67,4 +67,6 @@ gem 'ransack', '~> 1.8'
 # AirKong
 gem 'twilio-ruby'
 gem 'fullcalendar-rails', '~> 3.4'
-gem 'momentjs-rails', '2.17.1'
+gem 'momentjs-rails', '~> 2.17.1'
+gem 'stripe', '~> 3.0.0'
+gem 'rails-assets-card', source: 'https://rails-assets.org'

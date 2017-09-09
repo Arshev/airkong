@@ -18,5 +18,6 @@
 //= require toastr
 //= require moment
 //= require fullcalendar
+//= require card
 //= require turbolinks
 //= require_tree .
