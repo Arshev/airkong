@@ -50,4 +50,8 @@ class User < ApplicationRecord
     update(phone_verified: true) if self.pin == entered_pin
   end
 
+  def is_active_host
+    !self.merchant_id.blank?
+  end
+
 end

@@ -57,10 +57,14 @@ class ReservationsController < ApplicationController
       if !reservation.user.stripe_id.blank?
         customer = Stripe::Customer.retrieve(reservation.user.stripe_id)
         charge = Stripe::Charge.create(
-        :customer => customer.id,
-        :amount => reservation.total * 100,
-        :description => room.listing_name,
-        :currency => "usd"
+          :customer => customer.id,
+          :amount => reservation.total * 100,
+          :description => room.listing_name,
+          :currency => "usd",
+          :destination => {
+            :amount => reservation.total * 80, # 80% of the total amount goes to the Host
+            :account => room.user.merchant_id # Host's Stripe customer ID
+          }
         )
 
         if charge
