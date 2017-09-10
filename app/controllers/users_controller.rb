@@ -34,7 +34,9 @@ class UsersController < ApplicationController
   end
 
   def payment
+  end
 
+  def payout    
   end
 
   def add_card
