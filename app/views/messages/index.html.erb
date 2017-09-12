@@ -12,9 +12,9 @@
       </div>
       <div class="panel-body">
         <div class="container text-center">
-          <%= form_for [@conversation, @conversation.messages.new] do |f| %>
+          <%= form_for [@conversation, @conversation.messages.new], validate: true, remote: true do |f| %>
             <div class="form-group">
-              <%= f.text_field :content, placeholder: "Add a personal message", class: "form-control" %>
+              <%= f.text_field :content, placeholder: "Add a personal message", required: true, class: "form-control" %>
             </div>
             <%= f.hidden_field :user_id, value: current_user.id %>
             <div>
