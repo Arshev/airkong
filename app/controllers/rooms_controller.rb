@@ -69,10 +69,12 @@ class RoomsController < ApplicationController
     today = Date.today
     reservations = @room.reservations.where("(start_date >= ? OR end_date >= ?) AND status = ?", today, today, 1)
     unavailble_dates = @room.calendars.where("status = ? AND day > ?", 1, today)
+    special_dates = @room.calendars.where("status = ? AND day > ? AND price <> ?", 0, today, @room.price)
 
     render json: {
       reservations: reservations,
-      unavailble_dates: unavailble_dates
+      unavailble_dates: unavailble_dates,
+      special_dates: special_dates
     }
   end
 
