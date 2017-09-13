@@ -64,10 +64,14 @@
       dateType: 'json',
       success: function(data) {
 
-        $.each(data, function(arrID, arrValue){
+        $.each(data.reservations, function(arrID, arrValue){
           for(var d = new Date(arrValue.start_date); d <= new Date(arrValue.end_date); d.setDate(d.getDate() + 1)) {
             unavailableDates.push($.datepicker.formatDate('d-m-yy', d));
           }
+        });
+
+        $.each(data.unavailble_dates, function(arrID, arrValue){
+          unavailableDates.push($.datepicker.formatDate('dd-mm-yy', new Date(arrValue.day)));
         });
 
         $('#reservation_start_date').datepicker({
