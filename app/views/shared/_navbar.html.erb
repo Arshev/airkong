@@ -33,7 +33,7 @@
           <li>
             <%= link_to notifications_path do %>
               <i class="fa fa-bell fa-2x icon-babu"></i>
-              <span class="badge" id="navbar_num_of_unread"><%= current_user.uread if current_user.unread > 0 %></span>
+              <span class="badge" id="navbar_num_of_unread"><%= current_user.unread if current_user.unread > 0 %></span>
             <% end %>
           </li>
           <li class="dropdown">
